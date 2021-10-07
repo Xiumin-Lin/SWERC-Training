@@ -1,11 +1,12 @@
-package lin;
+package queue;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class Queue {
+    private Queue() {}
 
-    public static void main(String[] args) throws Exception {
+    public static void runAlgo() throws Exception {
         // 12207 "That is Your Queue"
         HashMap<Integer, Personne> register = new HashMap<>();
         Scanner sc = new Scanner(System.in);

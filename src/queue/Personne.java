@@ -1,4 +1,4 @@
-package lin;
+package queue;
 
 public class Personne {
     private final int val;
