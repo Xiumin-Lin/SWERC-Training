@@ -48,16 +48,25 @@ public class Queue {
                         System.out.println(x); // annonce que la personne urgente x est la suivantes
                         Personne urgentP = register.get(x);
 
-                        // retire la personne urgente de sa position
-                        urgentP.getPrev().setNext(urgentP.getNext());
-                        urgentP.getNext().setPrev(urgentP.getNext());
+                        // si la personne urgente est la personne en tête de liste, alors on fait comme avec 'N'
+                        if(urgentP.equals(firstP)) {
+                            lastP = lastP.getNext();
+                            firstP = firstP.getNext();
+                        }
+                        // retire et insere la personne urgente à la fin de la liste
+                        else if(!urgentP.equals(lastP)) {
+                            // retire
+                            urgentP.getPrev().setNext(urgentP.getNext());
+                            urgentP.getNext().setPrev(urgentP.getPrev());
 
-                        // insere la personne urgent à la fin
-                        urgentP.setPrev(lastP);
-                        urgentP.setNext(firstP);
-                        firstP.setPrev(urgentP);
-                        lastP.setNext(urgentP);
-                        lastP = urgentP;
+                            // insere
+                            urgentP.setPrev(lastP);
+                            urgentP.setNext(firstP);
+                            firstP.setPrev(urgentP);
+                            lastP.setNext(urgentP);
+                            lastP = urgentP;
+                        }
+
                         break;
                     default:
                         throw new Exception("Invalid Input !");
