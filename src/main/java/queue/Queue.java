@@ -12,9 +12,9 @@ public class Queue {
         Scanner sc = new Scanner(System.in);
         int compteur = 0; // compteur de cas
         while(true) {
-//            System.out.print("Enter p : ");
+//            System.out.print("Enter p : "); // DEBUG
             int p = sc.nextInt();
-//            System.out.print("Enter c : ");
+//            System.out.print("Enter c : "); // DEBUG
             int c = sc.nextInt();
 
             if(p == 0 && c == 0) break;
@@ -41,7 +41,7 @@ public class Queue {
                         firstP = firstP.getNext();
                         break;
                     case "E":
-//                        System.out.print("Enter x : ");
+//                        System.out.print("Enter x : "); // DEBUG
                         int x = sc.nextInt();
                         assert x > 0 && x <= p;
 
