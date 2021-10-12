@@ -6,8 +6,11 @@ import java.util.Scanner;
 public class Queue {
     private Queue() {}
 
+    /**
+     * 12207 "That is Your Queue"
+     * @throws Exception if invalid input
+     */
     public static void runAlgo() throws Exception {
-        // 12207 "That is Your Queue"
         HashMap<Integer, Personne> register = new HashMap<>();
         Scanner sc = new Scanner(System.in);
         int compteur = 0; // compteur de cas
