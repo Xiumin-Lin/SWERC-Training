@@ -9,8 +9,9 @@ public class Dice {
     private Dice() {}
 
     /**
-     * "Dice Cup"
-     *
+     * <b>"Dice Cup"</b><br>
+     * Displays the most probable sum of two dice whose number of faces is to be defined.
+     * If there are several sums of the same probability, they are displayed in increasing order.
      * @throws Exception if invalid input for nb of faces
      */
     public static void runAlgo() throws Exception {
