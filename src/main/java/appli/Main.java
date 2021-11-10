@@ -1,6 +1,6 @@
 package appli;
 
-import mincoverage.MinCoverage;
+import network.Network;
 
 public class Main {
 
@@ -10,6 +10,7 @@ public class Main {
 //        Tea.runAlgo();
 //        Dice.runAlgo();
 //        LCS.runAlgo();
-		MinCoverage.runAlgo();
+//		MinCoverage.runAlgo();
+		Network.runAlgo();
 	}
 }

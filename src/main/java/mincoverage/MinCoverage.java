@@ -1,5 +1,7 @@
 package mincoverage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 
 public class MinCoverage {
 
-	public static void runAlgo() {
+	public static void runAlgo() throws FileNotFoundException {
 		Scanner sc = new Scanner(System.in);
 		int nbTest = sc.nextInt();
 		sc.nextLine();
