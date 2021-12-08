@@ -1,7 +1,5 @@
 package birdwatching;
 
-import util.Algo;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -41,11 +39,32 @@ public class BirdWatching {
     private static boolean hasPathToRef(int treeNum, int tRef, int[][] graph) {
         boolean result = false;
         graph[treeNum][tRef] = FALSE;
-        List<Integer> dfs = Algo.dfs(graph, treeNum);
-        if(dfs.contains(tRef)) {
-            result = true;
-        }
+        if(dfsModified(graph, treeNum, tRef)) result = true;
         graph[treeNum][tRef] = TRUE;
         return result;
+    }
+
+    public static boolean dfsModified(int[][] graph, int startRef, int tRef) {
+        boolean[] visited = new boolean[graph.length];
+        visited[startRef] = true;
+        ArrayList<Integer> lifo = new ArrayList<>();
+        lifo.add(startRef);
+
+        while(!lifo.isEmpty()) {
+            int last = lifo.get(0);
+            boolean hasNeighbour = false;
+            for(int i = 0; i < graph.length; i++) {
+                if(graph[last][i] == 1 && !visited[i]) {
+                    if(i == tRef) return true;
+
+                    visited[i] = true;
+                    lifo.add(0, i);
+                    hasNeighbour = true;
+                    break;
+                }
+            }
+            if(!hasNeighbour) lifo.remove(0);
+        }
+        return false;
     }
 }
